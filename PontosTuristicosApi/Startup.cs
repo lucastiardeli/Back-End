@@ -49,6 +49,15 @@ namespace PontosTuristicosApi
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "PontosTuristicosApi v1"));
             }
 
+            //CONEXÃO COM REACT
+            app.UseCors(Options =>
+            {
+                Options.WithOrigins("http://localhost:3000");
+                Options.AllowAnyMethod();
+                Options.AllowAnyHeader();
+            });
+            //CONEXÃO DO REACT
+
             app.UseHttpsRedirection();
 
             app.UseRouting();

@@ -17,24 +17,31 @@ namespace PontosTuristicosApi.Services
             _context = context;
         }
 
+        //CREATE
         public async Task CreatePonto(Ponto ponto)
         {
             _context.Pontos.Add(ponto);
             await _context.SaveChangesAsync();
         }
+        //CREATE
 
+        //DELETE
         public async Task DeletePonto(Ponto ponto)
         {
             _context.Pontos.Remove(ponto);
             await _context.SaveChangesAsync();
         }
+        //DELETE
 
+        //GET POR ID
         public async Task<Ponto> GetPonto(int id)
         {
             var ponto = await _context.Pontos.FindAsync(id);
             return ponto;
         }
+        //GET POR ID
 
+        //GET
         public async Task<IEnumerable<Ponto>> GetPontos()
         {
             try
@@ -46,7 +53,10 @@ namespace PontosTuristicosApi.Services
                 throw;
             }
         }
+        //GET
 
+
+        //GET POR NOME
         public async Task<IEnumerable<Ponto>> GetPontosByNome(string nome)
         {
             IEnumerable<Ponto> pontos;
@@ -60,11 +70,14 @@ namespace PontosTuristicosApi.Services
             }
             return pontos;
         }
+        //GET POR NOME
 
+        //UPDATE
         public async Task UpdatePonto(Ponto ponto)
         {
             _context.Entry(ponto).State = EntityState.Modified;
             await _context.SaveChangesAsync();
         }
+        //UPDATE
     }
 }

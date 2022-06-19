@@ -18,7 +18,7 @@ namespace PontosTuristicosApi.Controllers
         {
             _pontoService = pontoService;
         }
-
+        //GET
         [HttpGet]
         public async Task<ActionResult<IAsyncEnumerable<Ponto>>>GetPontos()
 
@@ -33,7 +33,10 @@ namespace PontosTuristicosApi.Controllers
                 return StatusCode(StatusCodes.Status500InternalServerError, "Erro ao encontrar Pontos Turisticos");
             }
         }
+        //GET
 
+
+        //GET POR NOME
         [HttpGet("Search By Name")]
         public async Task<ActionResult<IAsyncEnumerable<Ponto>>> GetPontosByNome([FromQuery] string nome)
 
@@ -51,7 +54,10 @@ namespace PontosTuristicosApi.Controllers
                 return StatusCode(StatusCodes.Status500InternalServerError, "Erro ao encontrar Pontos Turisticos");
             }
         }
-           
+        //GET POR NOME
+        
+        
+        //GET POR ID
         [HttpGet("{id:int}", Name = "GetPonto")]
         
         public async Task <ActionResult<Ponto>> GetPonto (int id)
@@ -70,7 +76,10 @@ namespace PontosTuristicosApi.Controllers
             }
 
         }
+        //GET POR ID
 
+
+        //CREATE
         [HttpPost]
         public async Task<ActionResult> Create(Ponto ponto)
         {
@@ -85,7 +94,10 @@ namespace PontosTuristicosApi.Controllers
             }
 
         }
+        //CREATE
 
+
+        //UPDATE - EDITAR DADOS.
         [HttpPut("{id:int}")]
 
         public async Task<ActionResult> Edit (int id, [FromBody] Ponto ponto)
@@ -107,7 +119,10 @@ namespace PontosTuristicosApi.Controllers
                     return BadRequest("Request Invalido");
                 }
             }    
-     
+        //UPDATE - EDITAR DADOS
+
+
+        //DELETE
         [HttpDelete]
 
         public async Task<ActionResult> Delete (int id)
@@ -130,6 +145,8 @@ namespace PontosTuristicosApi.Controllers
                 return BadRequest("Request Invalido");
             }
         }
+        //DELETE
+
     
     
     }
