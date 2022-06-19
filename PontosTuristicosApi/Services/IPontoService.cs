@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PontosTuristicosApi.Services
 {
-    interface IPontoService
+    public interface IPontoService
     {
         Task<IEnumerable<Ponto>> GetPontos();
         Task<Ponto> GetPonto(int id);
