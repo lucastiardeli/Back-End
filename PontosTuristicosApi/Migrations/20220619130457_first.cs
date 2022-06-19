@@ -15,7 +15,7 @@ namespace PontosTuristicosApi.Migrations
                     Nome = table.Column<string>(type: "nvarchar(60)", maxLength: 60, nullable: false),
                     Cidade = table.Column<string>(type: "nvarchar(40)", maxLength: 40, nullable: false),
                     Estado = table.Column<string>(type: "nvarchar(2)", maxLength: 2, nullable: false),
-                    Rua = table.Column<string>(type: "nvarchar(80)", maxLength: 80, nullable: false),
+                    RuaReferencia = table.Column<string>(type: "nvarchar(80)", maxLength: 80, nullable: false),
                     Descricao = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false)
                 },
                 constraints: table =>

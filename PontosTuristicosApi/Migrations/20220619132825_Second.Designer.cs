@@ -9,8 +9,8 @@ using PontosTuristicosApi.Context;
 namespace PontosTuristicosApi.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20220619124728_first")]
-    partial class first
+    [Migration("20220619132825_Second")]
+    partial class Second
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -47,7 +47,7 @@ namespace PontosTuristicosApi.Migrations
                         .HasMaxLength(60)
                         .HasColumnType("nvarchar(60)");
 
-                    b.Property<string>("Rua")
+                    b.Property<string>("RuaReferencia")
                         .IsRequired()
                         .HasMaxLength(80)
                         .HasColumnType("nvarchar(80)");
@@ -55,6 +55,35 @@ namespace PontosTuristicosApi.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Pontos");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Cidade = "Curitiba",
+                            Descricao = "Cartão postal de Curitiba, flores típicas da Mata-Atlântica",
+                            Estado = "PR",
+                            Nome = "Jardim Botânico",
+                            RuaReferencia = "Ostoja Ruguski"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Cidade = "São Paulo",
+                            Descricao = "Uma das principais avenidas de São Paulo, com um trecho de 3KM",
+                            Estado = "SP",
+                            Nome = "Avenida Paulista",
+                            RuaReferencia = "Avenida Paulista"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Cidade = "Rio de Janeiro",
+                            Descricao = "Destino litorâneo mais epeciais do mundo",
+                            Estado = "RJ",
+                            Nome = "Praia de Copacabana",
+                            RuaReferencia = "Copacabana Praia"
+                        });
                 });
 #pragma warning restore 612, 618
         }

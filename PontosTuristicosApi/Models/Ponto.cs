@@ -20,7 +20,7 @@ namespace PontosTuristicosApi.Models
         public string Estado { get; set; }
         [Required]
         [MaxLength(80)]
-        public string Rua { get; set; }
+        public string RuaReferencia { get; set; }
         [Required]
         [MaxLength(100)]
         public string Descricao { get; set; }

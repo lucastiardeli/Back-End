@@ -2,15 +2,17 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using PontosTuristicosApi.Context;
 
 namespace PontosTuristicosApi.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20220619130457_first")]
+    partial class first
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -53,35 +55,6 @@ namespace PontosTuristicosApi.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Pontos");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            Cidade = "Curitiba",
-                            Descricao = "Cartão postal de Curitiba, flores típicas da Mata-Atlântica",
-                            Estado = "PR",
-                            Nome = "Jardim Botânico",
-                            RuaReferencia = "Ostoja Ruguski"
-                        },
-                        new
-                        {
-                            Id = 2,
-                            Cidade = "São Paulo",
-                            Descricao = "Uma das principais avenidas de São Paulo, com um trecho de 3KM",
-                            Estado = "SP",
-                            Nome = "Avenida Paulista",
-                            RuaReferencia = "Avenida Paulista"
-                        },
-                        new
-                        {
-                            Id = 3,
-                            Cidade = "Rio de Janeiro",
-                            Descricao = "Destino litorâneo mais epeciais do mundo",
-                            Estado = "RJ",
-                            Nome = "Praia de Copacabana",
-                            RuaReferencia = "Copacabana Praia"
-                        });
                 });
 #pragma warning restore 612, 618
         }
