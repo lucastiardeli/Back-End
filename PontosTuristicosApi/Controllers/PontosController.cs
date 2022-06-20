@@ -123,16 +123,16 @@ namespace PontosTuristicosApi.Controllers
 
 
         //DELETE
-        [HttpDelete]
+        [HttpDelete("{id:int}")]
 
         public async Task<ActionResult> Delete (int id)
         {
             try
             {
-                var aluno = await _pontoService.GetPonto(id);
-                if (aluno != null)
+                var ponto = await _pontoService.GetPonto(id);
+                if (ponto != null)
                 {
-                    await _pontoService.DeletePonto(aluno);
+                    await _pontoService.DeletePonto(ponto);
                     return Ok($"Ponto com id={id} foi excluido com sucesso");
                 }
                 else
