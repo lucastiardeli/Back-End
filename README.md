@@ -9,5 +9,3 @@
 -Abrir gerenciador de pacotes do Visual Studio e executar "update-database" para criação de tabela e inserção de dados no banco.
 
 -Executar projeto com IIS Express, o Swagger será iniciado.
-
--Para o front-end Funcionar é precisa estar executando a API.
